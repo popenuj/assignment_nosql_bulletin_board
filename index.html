@@ -26,10 +26,18 @@
           <h2>Recent Comments</h2>
         </div>
         <div class="col-xs-6">
-          <h2>Post</h2>
+          <h2>Post:</h2>
           <h3>{{ post.title }}</h3>
           <time>Posted on {{ post.creation_date | date }}</time> by {{ post.author }}
           <p>{{ post.text }}</p>
+          <div class="comments">
+            <h3>Comments:</h3>
+            <div ng-repeat="comment in comments | orderBy : '-votes'">
+              <h4>{{ comment.votes }} | {{ comment.author }}</h4>
+              Commented on<time>{{ comment.creation_date | date }}</time>
+              <p>{{ comment.text }}</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -38,5 +46,6 @@
   <script src="/js/app.js"></script>
   <script src="/js/controllers/postsCtrl.js"></script>
   <script src="/js/services/postService.js"></script>
+  <script src="/js/services/commentsService.js"></script>
 
 </html>
