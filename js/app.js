@@ -1,2 +1,5 @@
+var RedditClone = angular.module("BulletinBoard", []);
 
-var DirectiveMadness = angular.module("BulletinBoard", []);
+RedditClone.factory('_', ['$window', function($window) {
+  return $window._;
+}]);
