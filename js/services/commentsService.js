@@ -11,7 +11,7 @@ RedditClone.factory('commentsService', ['$http', function($http) {
       });
   };
 
-  var addComment = function(comment) {
+  var addComment = function addComment(comment) {
     var newComment = {
       parent_id: 1,
       author: comment.author,

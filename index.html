@@ -36,7 +36,8 @@
               <strong>Create a Comment</strong>
             </div>
             <div class="panel-body">
-              <form ng-submit="commentSubmit(newComment)">
+              <form ng-submit="post.addComment(newComment)">
+                {{ post.addComment }}
                 <div class="form-group">
                   <label for="author">Author</label>
                   <input id="author" type="text" ng-model="newComment.author" class="form-control">
@@ -61,8 +62,8 @@
   <script src="/js/app.js"></script>
   <script src="/js/controllers/postsCtrl.js"></script>
   <script src="/js/controllers/recentCommentsCtrl.js"></script>
-  <script src="/js/services/postService.js"></script>
   <script src="/js/services/commentsService.js"></script>
+  <script src="/js/services/postService.js"></script>
   <script src="/js/directives/comment.js"></script>
 
 </html>
