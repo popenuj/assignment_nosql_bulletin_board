@@ -6,6 +6,9 @@ RedditClone.factory('commentsService', ['$http', function($http) {
       .then(function(response) {
         if (_comments) return _comments;
         _comments = response.data;
+        for (var i = 0; i < _comments.length; i++) {
+          _extend(_comments[i]);
+        }
         _id = _comments.length;
         return _comments;
       });
@@ -23,6 +26,12 @@ RedditClone.factory('commentsService', ['$http', function($http) {
     _id += 1;
     _comments.push(newComment);
   };
+
+  var _extend = function(comment) {
+    comment.changeVote = function(value) {
+      comment.votes += value;
+    }
+  }
 
   return {
     getComments: getComments,

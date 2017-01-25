@@ -1,5 +1,7 @@
 <div>
-  <h4>{{ comment.votes }} | {{ comment.author }}</h4>
+  <h4><span ng-click="comment.changeVote(1)" class="arrow">👍</span>
+      <span ng-click="comment.changeVote(-1)" class="arrow">👎</span>
+      {{ comment.votes }} | {{ comment.author }}</h4>
   Commented on <time>{{ comment.creation_date | date }}</time>
   <p>{{ comment.text }}</p>
 </div>
