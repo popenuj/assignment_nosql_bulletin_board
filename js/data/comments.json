@@ -4,20 +4,23 @@
     "author": "Cat Woman",
     "creation_date": "2016-12-31T16:13:57.267Z",
     "text": "Your post is purrrrfect",
-    "votes": 4
+    "votes": 4,
+    "id": 1
   },
   "2": {
     "parent_id": 1,
     "author": "Robin",
     "creation_date": "2017-01-01T16:13:57.267Z",
     "text": "I don't even like eggs",
-    "votes": 3
+    "votes": 3,
+    "id": 2
   },
   "3": {
     "parent_id": 1,
     "author": "Joker",
     "creation_date": "2016-12-30T16:13:57.267Z",
     "text": "I got away",
-    "votes": -1
+    "votes": -1,
+    "id": 3
   }
 }

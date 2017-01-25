@@ -31,6 +31,24 @@
           <h3>{{ post.title }}</h3>
           <time>Posted on {{ post.creation_date | date }}</time> by {{ post.author }}
           <p>{{ post.text }}</p>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <strong>Create a Comment</strong>
+            </div>
+            <div class="panel-body">
+              <form>
+                <div class="form-group">
+                  <label for="author">Author</label>
+                  <input id="author" type="text" ng-model="newComment.author" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="text">Comment</label>
+                  <textarea id="text" ng-model="newComment.text" class="form-control"></textarea>
+                </div>
+                <input type="submit" class="btn btn-primary">
+              </form>
+            </div>
+          </div>
           <div class="comments">
             <h3>Comments:</h3>
             <comment ng-repeat="comment in comments | orderBy : '-votes'"></comment>

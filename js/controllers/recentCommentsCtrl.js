@@ -2,15 +2,9 @@ RedditClone.controller('RecentCommentsCtrl',
   ['$scope', '_', '$http', 'commentsService',
     function($scope, _, $http, commentsService) {
 
-      commentsService.getComments().then(function(response) {
-        $scope.recentComments = $scope.arrayOfComments(response.data);
+      commentsService.getComments().then(function(comments) {
+        $scope.recentComments = comments;
       });
-
-      $scope.arrayOfComments = function(obj) {
-        return Object.keys(obj).map(function(key) {
-          return obj[key];
-        });
-      };
 
     }
   ]

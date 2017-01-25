@@ -4,16 +4,8 @@ RedditClone.controller('PostsCtrl', ['$scope', '_', '$http', 'postService', 'com
     $scope.post = response.data[1];
   });
 
-  commentsService.getComments().then(function(response) {
-    $scope.comments = $scope.arrayOfComments(response.data);
-    console.log($scope.comments)
+  commentsService.getComments().then(function(comments) {
+    $scope.comments = comments;
   });
-
-  $scope.arrayOfComments = function(obj) {
-    return Object.keys(obj).map(function(key) {
-      return obj[key];
-    });
-  };
-
 
 }]);
