@@ -8,4 +8,8 @@ RedditClone.controller('PostsCtrl', ['$scope', '_', '$http', 'postService', 'com
     $scope.comments = comments;
   });
 
+  $scope.commentSubmit = function commentSubmit(newComment) {
+    commentsService.addComment(newComment);
+  };
+
 }]);

@@ -36,7 +36,7 @@
               <strong>Create a Comment</strong>
             </div>
             <div class="panel-body">
-              <form>
+              <form ng-submit="commentSubmit(newComment)">
                 <div class="form-group">
                   <label for="author">Author</label>
                   <input id="author" type="text" ng-model="newComment.author" class="form-control">

@@ -2,17 +2,13 @@ RedditClone.factory('commentsService', ['$http', function($http) {
   var _comments;
   var _id = 0;
   var getComments = function() {
-    return $http.get('/js/data/comments.json').then(function(response) {
-      var comments = arrayOfComments(response.data);
-      _id = comments.length;
-      return _comments = comments;
-    });
-  };
-
-  var arrayOfComments = function(obj) {
-    return Object.keys(obj).map(function(key) {
-      return obj[key];
-    });
+    return $http.get('/js/data/comments.json')
+      .then(function(response) {
+        if (_comments) return _comments;
+        _comments = response.data;
+        _id = _comments.length;
+        return _comments;
+      });
   };
 
   var addComment = function(comment) {
